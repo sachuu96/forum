@@ -1,0 +1,40 @@
+<html>
+	<head></head>
+	<body></body>
+	<script>
+		console.log("Hello world");
+		
+		function User(name,gender)
+		{
+			this.name=name;
+			this.gender=gender;
+			this.age=0;
+		}
+		
+		var user = new User("sachini","female");
+		console.log(user.name);
+		
+		User.prototype.setAge = function(age){
+			this.age=age;
+		};
+		
+		var user1 = new User("Tharinda","Male");
+		user1.setAge(12);
+		console.log(user1.age);
+		
+		var user2 = new User("ramesh");
+		console.log(user2.name);
+		
+		user2.__proto__.setGender= function (gender){
+			this.gender=gender;
+		};
+		
+		user2.setGender("male");
+		console.log(user2.gender);
+		
+		var user3 = new User("Dilshan");
+		console.log(user3.name);
+		user3.setGender("female");
+		console.log(user3.gender);
+	</script>
+</html>
